@@ -7,6 +7,7 @@ import * as Web3 from '@solana/web3.js'
 const Home: NextPage = () => {
   const [balance, setBalance] = useState(0)
   const [address, setAddress] = useState('')
+  const [isExecutable, setIsExecutable] = useState(false)
 
   const addressSubmittedHandler = (address: string) => {
     try {
@@ -32,6 +33,7 @@ const Home: NextPage = () => {
         <AddressForm handler={addressSubmittedHandler} />
         <p>{`Address: ${address}`}</p>
         <p>{`Balance: ${balance} SOL`}</p>
+        <p>{`Is Executable: ${isExecutable}`}</p>
       </header>
     </div>
   )
